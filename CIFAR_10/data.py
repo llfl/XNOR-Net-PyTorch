@@ -15,13 +15,13 @@ class dataset():
             print(train_data_path)
             self.train_data = numpy.load(open(train_data_path, 'rb'))
             self.train_data = torch.from_numpy(self.train_data.astype('float32'))
-            self.train_labels = numpy.load(open(train_labels_path, 'r')).astype('int')
+            self.train_labels = numpy.load(open(train_labels_path, 'rb')).astype('int')
         else:
             test_data_path = os.path.join(root, 'test_data')
             test_labels_path = os.path.join(root, 'test_labels')
-            self.test_data = numpy.load(open(test_data_path, 'r'))
+            self.test_data = numpy.load(open(test_data_path, 'rb'))
             self.test_data = torch.from_numpy(self.test_data.astype('float32'))
-            self.test_labels = numpy.load(open(test_labels_path, 'r')).astype('int')
+            self.test_labels = numpy.load(open(test_labels_path, 'rb')).astype('int')
 
     def __len__(self):
         if self.train:
