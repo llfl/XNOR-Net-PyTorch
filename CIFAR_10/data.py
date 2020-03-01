@@ -13,7 +13,7 @@ class dataset():
             train_data_path = os.path.join(root, 'train_data')
             train_labels_path = os.path.join(root, 'train_labels')
             print(train_data_path)
-            self.train_data = numpy.load(open(train_data_path, 'r'))
+            self.train_data = numpy.load(open(train_data_path, 'rb'))
             self.train_data = torch.from_numpy(self.train_data.astype('float32'))
             self.train_labels = numpy.load(open(train_labels_path, 'r')).astype('int')
         else:
