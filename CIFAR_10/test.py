@@ -175,7 +175,7 @@ if __name__=='__main__':
     # do the evaluation if specified
     print(testloader)
     if args.evaluate:
-        # writer.add_graph(model,testset.test_data[1])
+        writer.add_graph(model,iter(testloader).next())
 
         # 标量可视化与权重直方图
         loss = 10   # 第0层
