@@ -175,7 +175,7 @@ if __name__=='__main__':
     # do the evaluation if specified
     # print(testset.test_data[1])
     if args.evaluate:
-        # writer.add_graph(model,testset.test_data[1])
+        writer.add_graph(model,testset.test_data[1])
 
         # 标量可视化与权重直方图
         loss = 10   # 第0层
@@ -185,9 +185,10 @@ if __name__=='__main__':
                 writer.add_scalar('loss', loss, i)
                 loss = loss*0.5
 
-            
+        
+
         # test()
-        # exit(0)
+        exit(0)
 
     # start training
     # for epoch in range(1, 320):
