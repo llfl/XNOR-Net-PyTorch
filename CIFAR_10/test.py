@@ -174,7 +174,7 @@ if __name__=='__main__':
 
     # do the evaluation if specified
     if args.evaluate:
-        writer.add_graph(model)
+        writer.add_graph(model,testloader[1])
         test()
         exit(0)
 
