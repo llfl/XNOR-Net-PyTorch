@@ -187,10 +187,10 @@ if __name__=='__main__':
 
             
         # test()
-        exit(0)
+        # exit(0)
 
     # start training
-    for epoch in range(1, 320):
-        adjust_learning_rate(optimizer, epoch)
-        train(epoch)
-        test()
+    # for epoch in range(1, 320):
+    #     adjust_learning_rate(optimizer, epoch)
+    #     train(epoch)
+    #     test()
