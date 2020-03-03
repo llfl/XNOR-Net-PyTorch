@@ -175,7 +175,8 @@ if __name__=='__main__':
     # do the evaluation if specified
     print(testloader)
     if args.evaluate:
-        inputdata, = iter(testloader).next()
+        inputdata, damn = iter(testloader).next()
+        print(inputdata.size(),damn.size())
         writer.add_graph(model,inputdata)
 
         # 标量可视化与权重直方图
