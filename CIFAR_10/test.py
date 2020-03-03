@@ -173,9 +173,9 @@ if __name__=='__main__':
     bin_op = util.BinOp(model)
 
     # do the evaluation if specified
-    print(testset.dtype())
+    print(testset.test_data[1])
     if args.evaluate:
-        writer.add_graph(model,testset[1])
+        writer.add_graph(model,test_data[1])
         test()
         exit(0)
 
