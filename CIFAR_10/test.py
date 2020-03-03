@@ -110,7 +110,7 @@ if __name__=='__main__':
     torch.cuda.manual_seed(1)
     
     # 可视化
-    writer = SummaryWriter(comment='bnn')
+    writer = SummaryWriter('./Result')
 
 
     # prepare the data
@@ -173,10 +173,20 @@ if __name__=='__main__':
     bin_op = util.BinOp(model)
 
     # do the evaluation if specified
-    print(testset.test_data[1])
+    # print(testset.test_data[1])
     if args.evaluate:
-        writer.add_graph(model,testset.test_data[1])
-        test()
+        # writer.add_graph(model,testset.test_data[1])
+
+        # 标量可视化与权重直方图
+        loss = 10   # 第0层
+        for i, (name, param) in enumerate(model.named_parameters()):
+            if 'bn' not in name:
+                writer.add_histogram(name, param, 0)
+                writer.add_scalar('loss', loss, i)
+                loss = loss*0.5
+
+            
+        # test()
         exit(0)
 
     # start training
