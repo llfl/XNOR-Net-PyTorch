@@ -175,7 +175,7 @@ if __name__=='__main__':
     # do the evaluation if specified
     print(trainset[1])
     if args.evaluate:
-        writer.add_graph(model,)
+        writer.add_graph(model,trainset[1])
         test()
         exit(0)
 
