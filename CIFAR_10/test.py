@@ -175,15 +175,16 @@ if __name__=='__main__':
     # do the evaluation if specified
     print(testloader)
     if args.evaluate:
-        writer.add_graph(model,iter(testloader).next())
+        inputdata, = iter(testloader).next()
+        writer.add_graph(model,inputdata)
 
         # 标量可视化与权重直方图
-        loss = 10   # 第0层
-        for i, (name, param) in enumerate(model.named_parameters()):
-            if 'bn' not in name:
-                writer.add_histogram(name, param, 0)
-                writer.add_scalar('loss', loss, i)
-                loss = loss*0.5
+        # loss = 10   # 第0层
+        # for i, (name, param) in enumerate(model.named_parameters()):
+        #     if 'bn' not in name:
+        #         writer.add_histogram(name, param, 0)
+        #         writer.add_scalar('loss', loss, i)
+        #         loss = loss*0.5
 
         
 
