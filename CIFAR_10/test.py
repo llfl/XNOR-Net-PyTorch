@@ -173,7 +173,7 @@ if __name__=='__main__':
     bin_op = util.BinOp(model)
 
     # do the evaluation if specified
-    print(trainset[1])
+    print(trainset.size())
     if args.evaluate:
         writer.add_graph(model,trainset[1])
         test()
