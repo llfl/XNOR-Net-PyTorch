@@ -173,7 +173,7 @@ if __name__=='__main__':
     bin_op = util.BinOp(model)
 
     # do the evaluation if specified
-    print(enumerate(trainloader))
+    print(trainset[1])
     if args.evaluate:
         writer.add_graph(model,)
         test()
