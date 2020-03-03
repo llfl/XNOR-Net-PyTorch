@@ -173,7 +173,12 @@ if __name__=='__main__':
     bin_op = util.BinOp(model)
 
     # do the evaluation if specified
-    print(testloader)
+    # print(testloader)
+    for parameters in model.parameters():
+        print(parameters)
+
+    for name,parameters in model.named_parameters():
+        print(name,':',parameters.size())
     if args.evaluate:
         inputdata, damn = iter(testloader).next()
         print(inputdata.size(),damn.size())
