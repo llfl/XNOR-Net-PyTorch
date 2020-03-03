@@ -178,15 +178,12 @@ if __name__=='__main__':
     print(model,file=f)
     # do the evaluation if specified
     # print(testloader)
-    for parameters in model.parameters():
-        
-
     print("\n",file=f)
     for name,parameters in model.named_parameters():
         print(name,':',parameters.size(), file=f)
         print(parameters,file=f)
         print("\n",file=f)
-        
+
     if args.evaluate:
         inputdata, damn = iter(testloader).next()
         print(inputdata.size(),damn.size())
