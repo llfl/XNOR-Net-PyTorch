@@ -172,13 +172,17 @@ if __name__=='__main__':
     # define the binarization operator
     bin_op = util.BinOp(model)
 
+
+
+    f = open("net.txt","w+")
+    print(model,file=f)
     # do the evaluation if specified
     # print(testloader)
     for parameters in model.parameters():
-        print(parameters)
+        print(parameters,file=f)
 
     for name,parameters in model.named_parameters():
-        print(name,':',parameters.size())
+        print(name,':',parameters.size(), file=f)
     if args.evaluate:
         inputdata, damn = iter(testloader).next()
         print(inputdata.size(),damn.size())
