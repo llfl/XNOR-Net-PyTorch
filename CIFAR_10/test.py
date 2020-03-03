@@ -175,7 +175,7 @@ if __name__=='__main__':
     # do the evaluation if specified
     print(testset.test_data[1])
     if args.evaluate:
-        writer.add_graph(model,test_data[1])
+        writer.add_graph(model,testset.test_data[1])
         test()
         exit(0)
 
