@@ -173,8 +173,9 @@ if __name__=='__main__':
     bin_op = util.BinOp(model)
 
     # do the evaluation if specified
+    print(testloader)
     if args.evaluate:
-        writer.add_graph(model,enumerate(testloader)[1])
+        writer.add_graph(model,)
         test()
         exit(0)
 
