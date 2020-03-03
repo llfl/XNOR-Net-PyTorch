@@ -99,7 +99,7 @@ if __name__=='__main__':
             help='the architecture for the network: nin')
     parser.add_argument('--lr', action='store', default='0.01',
             help='the intial learning rate')
-    parser.add_argument('--pretrained', action='store', default=None,
+    parser.add_argument('--pretrained', action='store', default='./models/nin.pth.tar',
             help='the path to the pretrained model')
     parser.add_argument('--evaluate', action='store_true', default=True, help='evaluate the model')
     args = parser.parse_args()
